@@ -7,7 +7,7 @@ import {
 
 // limpa e recria a pasta dist
 rmSync("dist", { recursive: true, force: true });
-mkdirSync("dist/html", { recursive: true });
+mkdirSync("dist", { recursive: true });
 
 // junta os módulos em um arquivo só e minifica
 await build({
@@ -32,7 +32,7 @@ const htmlMin = await minify(html, {
     conservativeCollapse: true,
     removeComments: true
 });
-writeFileSync("dist/html/index.html", htmlMin);
+writeFileSync("dist/index.html", htmlMin);
 
 // Imagens: copia sem alterar
 cpSync("imagens", "dist/imagens", { recursive: true });
