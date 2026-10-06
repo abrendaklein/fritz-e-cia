@@ -77,3 +77,5 @@ O repositório segue o GitFlow:
 ## Autora
  
 Brenda Klein
+
+Projeto desenvolvido para a disciplina de front-end.
