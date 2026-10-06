@@ -1,0 +1,25 @@
+{
+  "name": "projeto-ong",
+  "version": "1.0.0",
+  "description": "Site de uma ONG fictícia de proteção animal, feito como projeto acadêmico. A ideia nasceu de uma história real: a de um gato de rua chamado Fritz.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abrendaklein/fritz-e-cia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/abrendaklein/fritz-e-cia/issues"
+  },
+  "homepage": "https://github.com/abrendaklein/fritz-e-cia#readme",
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "html-minifier-terser": "^7.2.0"
+  }
+}
