@@ -23,4 +23,8 @@ const rotas = {
  
 iniciarMenu();
 iniciarRoteador({ rotas: rotas, container: document.getElementById("app") });
- 
+
+document.querySelector(".pular").addEventListener("click", function (evento) {
+    evento.preventDefault();
+    document.getElementById("app").focus();
+});

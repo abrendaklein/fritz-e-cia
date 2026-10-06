@@ -670,3 +670,20 @@ footer a {
     }
 }
 
+.pular {
+    position: absolute;
+    left: 0;
+    top: -100px;
+    padding: 0.6rem 1rem;
+    background: var(--marrom);
+    color: var(--creme);
+    z-index: 20;
+}
+
+.pular:focus {
+    top: 0;
+}
+
+.menu-toggle {
+    width: auto;
+}
