@@ -684,3 +684,108 @@ footer a {
 .menu-toggle {
     width: auto;
 }
+
+
+/* ===== Correções de contraste (valem para os dois modos) ===== */
+address a {
+    color: var(--marrom);
+    text-decoration: underline;
+}
+
+footer a:hover {
+    color: #FBF3E8;
+}
+
+/* ===== MODO ESCURO (segue a preferência do sistema) ===== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+        --creme: #1E120D;
+        --neutro-claro: #2B1A12;
+        --branco: #3A2418;
+        --texto-suave: #C9AE9C;
+        --link: #EDC55B;
+        --erro: #FF8A80;
+        --erro-fundo: #3D1F1B;
+    }
+
+    body {
+        color: #FBF3E8;
+    }
+
+    /* Foco visível: amarelo no fundo escuro, marrom nas áreas claras */
+    :focus-visible {
+        outline-color: var(--amarelo);
+    }
+
+    header :focus-visible,
+    article :focus-visible,
+    address :focus-visible,
+    #participe :focus-visible {
+        outline-color: var(--marrom);
+    }
+
+    /* Áreas claras continuam com texto escuro */
+    header,
+    article,
+    figure,
+    address,
+    #participe,
+    legend {
+        color: var(--marrom);
+    }
+
+    /* Menu: página atual */
+    nav a[aria-current="page"] {
+        background: var(--creme);
+        color: #FBF3E8;
+    }
+
+    nav a[aria-current="page"]:focus-visible {
+        outline-color: var(--amarelo);
+    }
+
+    /* Formulário */
+    input:not([type="radio"]):not([type="checkbox"]),
+    select,
+    textarea {
+        color: #FBF3E8;
+        border-color: #C9AE9C;
+    }
+
+    input:not([type="radio"]):not([type="checkbox"]):user-invalid,
+    select:user-invalid,
+    textarea:user-invalid {
+        border-color: var(--erro);
+        background: var(--erro-fundo);
+    }
+
+    button[type="reset"] {
+        color: #FBF3E8;
+        border-color: #FBF3E8;
+    }
+
+    button[type="reset"]:hover {
+        color: var(--marrom);
+        border-color: var(--marrom);
+    }
+
+    #limpar-cadastros {
+        background: var(--amarelo);
+    }
+
+    /* Outros elementos */
+    .pular {
+        background: var(--amarelo);
+        color: var(--marrom);
+    }
+
+    .badge {
+        background: #FBF3E8;
+    }
+
+    footer {
+        color: #FBF3E8;
+        border-top: 2px solid var(--bege);
+    }
+}
