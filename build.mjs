@@ -52,6 +52,6 @@ function linha(nome, antes, depois) {
 }
 
 console.log("");
-linha("HTML", tamanho("html/index.html"), tamanho("dist/html/index.html"));
+linha("HTML", tamanho("html/index.html"), tamanho("dist/index.html"));
 linha("CSS ", tamanho("css/style.css"), tamanho("dist/css/style.css"));
 linha("JS  ", jsAntes, tamanho("dist/js/main.js"));
