@@ -2,7 +2,8 @@
  
 Site de uma ONG fictícia de proteção animal, feito como projeto acadêmico. A ideia nasceu de uma história real: a de um gato de rua chamado Fritz.
  
-**Site publicado:** https://abrendaklein.github.io/fritz-e-cia/
+**Site publicado:**
+https://fritz-e-cia-ong.vercel.app
  
 ## Sobre o projeto
  
