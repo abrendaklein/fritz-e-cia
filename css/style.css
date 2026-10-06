@@ -1,0 +1,672 @@
+/* ===== Fontes ===== */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500&family=Nunito:wght@400;700&display=swap');
+
+/* ===== Design System ===== */
+:root {
+    /* cores primárias */
+    --laranja: #EC802B;
+    --amarelo: #EDC55B;
+
+    /* cores secundárias */
+    --turquesa: #66BCB4;
+    --bege: #E8CCAD;
+
+    /* neutros */
+    --creme: #FBF3E8;
+    --neutro-claro: #FFF8EE;
+    --branco: #FFFFFF;
+    --marrom: #3B1E14;
+    --texto-suave: #7A5A48;
+
+    /* ação e feedback */
+    --link: #9A4308;
+    --erro: #B3261E;
+    --erro-fundo: #FFF0EE;
+
+    /* tipografia */
+    --fonte-titulo: 'Fredoka', 'Trebuchet MS', sans-serif;
+    --fonte-texto: 'Nunito', 'Segoe UI', sans-serif;
+    --fs-pequeno: 0.95rem;
+    --fs-base: 1.05rem;
+    --fs-h3: 1.2rem;
+    --fs-h2: 1.6rem;
+    --fs-h1: 2.3rem;
+
+    /* espaçamentos (base de 8px) */
+    --esp-1: 0.25rem;
+    --esp-2: 0.5rem;
+    --esp-3: 1rem;
+    --esp-4: 1.5rem;
+    --esp-5: 2rem;
+    --esp-6: 3rem;
+
+    /* grid de 12 colunas */
+    --colunas: 12;
+    --gap-grid: var(--esp-3);
+
+    --raio: 18px;
+    --largura-max: 1000px;
+}
+
+/* ===== Base ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--creme);
+    color: var(--marrom);
+    font-family: var(--fonte-texto);
+    font-size: var(--fs-base);
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3 {
+    font-family: var(--fonte-titulo);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h1 { font-size: var(--fs-h1); margin: 0 0 var(--esp-2); }
+h2 { font-size: var(--fs-h2); margin: 0 0 var(--esp-3); }
+h3 { font-size: var(--fs-h3); margin: var(--esp-3) 0 var(--esp-1); }
+
+a { color: var(--link); }
+a:hover { color: var(--marrom); }
+
+:focus-visible {
+    outline: 3px solid var(--marrom);
+    outline-offset: 3px;
+}
+
+/* ===== Cabeçalho e menu ===== */
+header {
+    background: var(--laranja);
+    padding: var(--esp-3) var(--esp-4) 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--esp-2) var(--esp-4);
+}
+
+header h1 {
+    margin: 0;
+}
+
+.logo {
+    height: 96px;
+    width: auto;
+    margin-bottom: var(--esp-2);
+}
+
+header > p {
+    margin: 0 0 var(--esp-2) var(--esp-3);
+    font-family: var(--fonte-titulo);
+    font-size: 1rem;
+    font-weight: 500;
+    align-self: center;
+}
+
+nav {
+    align-self: flex-end;
+}
+
+/* Botão do menu mobile fica escondido em telas maiores */
+.menu-toggle {
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 0.4rem;
+}
+
+nav a {
+    display: block;
+    padding: 0.6rem 1.1rem;
+    background: var(--amarelo);
+    color: var(--marrom);
+    text-decoration: none;
+    font-family: var(--fonte-titulo);
+    font-weight: 500;
+    border-radius: 12px 12px 0 0;
+    transition: background 0.2s;
+}
+
+nav a:hover {
+    background: var(--bege);
+}
+
+nav a[aria-current="page"] {
+    background: var(--creme);
+}
+
+nav a:focus-visible {
+    outline-offset: -4px;
+}
+
+/* ===== Conteúdo principal ===== */
+main {
+    width: 100%;
+    max-width: var(--largura-max);
+    margin: 0 auto;
+    padding: var(--esp-5) var(--esp-4);
+    flex: 1;
+}
+
+section {
+    margin-bottom: var(--esp-5);
+}
+
+/* Figura do Fritz na história */
+figure {
+    max-width: 520px;
+    margin: var(--esp-3) auto var(--esp-4);
+    padding: var(--esp-5) 2.5rem 1.2rem;
+    background: var(--turquesa);
+    border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+    text-align: center;
+}
+
+figure img {
+    margin: 0 auto;
+}
+
+figcaption {
+    margin-top: 0.6rem;
+    font-size: var(--fs-pequeno);
+    font-style: italic;
+}
+
+/* ===== Cards dos projetos ===== */
+article {
+    background: var(--amarelo);
+    border-radius: var(--raio);
+    padding: var(--esp-3) var(--esp-4);
+    margin-bottom: var(--esp-3);
+}
+
+article:nth-of-type(2) { background: var(--bege); }
+article:nth-of-type(3) { background: var(--turquesa); }
+
+article h2,
+article h3 {
+    margin-top: 0;
+}
+
+article ul {
+    margin: var(--esp-2) 0 0;
+    padding-left: 1.2rem;
+}
+
+/* ===== Feedback ===== */
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.65rem;
+    margin-bottom: 0.35rem;
+    background: var(--creme);
+    color: var(--marrom);
+    border: 1px solid var(--marrom);
+    border-radius: 8px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+.alert {
+    margin: var(--esp-3) 0;
+    padding: 0.8rem 1rem;
+    background: var(--bege);
+    color: var(--marrom);
+    border-left: 5px solid var(--laranja);
+    border-radius: 10px;
+}
+
+#mensagem-envio:not(:empty) {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 10;
+    max-width: 320px;
+    margin: 0;
+    padding: 0.8rem 1rem;
+    background: var(--turquesa);
+    color: var(--marrom);
+    border: 2px solid var(--marrom);
+    border-radius: 12px;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(59, 30, 20, 0.2);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+/* ===== GRID DE 12 COLUNAS ===== */
+#projetos,
+.topo-pagina,
+.cadastro-layout {
+    display: grid;
+    grid-template-columns: repeat(var(--colunas), minmax(0, 1fr));
+    gap: var(--gap-grid);
+}
+
+/* Home: 3 cards de 4 colunas (4 + 4 + 4 = 12) */
+#projetos h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+}
+
+#projetos article {
+    grid-column: span 4;
+    margin-bottom: 0;
+}
+
+/* Projetos: texto com 9 colunas + gatinho com 3 */
+.topo-pagina {
+    align-items: center;
+    margin-bottom: var(--esp-4);
+}
+
+.topo-pagina > div {
+    grid-column: span 9;
+}
+
+.topo-pagina .gato-lateral {
+    grid-column: span 3;
+    justify-self: end;
+    width: 100%;
+    max-width: 190px;
+}
+
+/* Cadastro: formulário com 8 colunas + gatinho com 4 */
+.cadastro-layout {
+    align-items: start;
+    gap: var(--esp-5);
+}
+
+.cadastro-layout form {
+    grid-column: span 8;
+}
+
+.cadastro-layout .gato-lateral {
+    grid-column: span 4;
+    position: sticky;
+    top: var(--esp-4);
+    margin-top: var(--esp-3);
+}
+
+/* ===== Contato ===== */
+address {
+    display: inline-block;
+    padding: var(--esp-2) 1.25rem;
+    background: var(--bege);
+    border-radius: var(--raio);
+    font-style: normal;
+}
+
+address p {
+    margin: 0.4rem 0;
+}
+
+#participe {
+    padding: 1.25rem;
+    background: var(--bege);
+    border-radius: var(--raio);
+    text-align: center;
+}
+
+#participe a {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    background: var(--laranja);
+    color: var(--marrom);
+    border: 2px solid var(--marrom);
+    border-radius: 14px;
+    font-family: var(--fonte-titulo);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+#participe a:hover {
+    background: var(--amarelo);
+}
+
+/* ===== Formulário ===== */
+fieldset {
+    margin: 0 0 var(--esp-4);
+    padding: 1.25rem 1.25rem var(--esp-2);
+    background: var(--neutro-claro);
+    border: 2px solid var(--bege);
+    border-radius: var(--raio);
+}
+
+legend {
+    padding: 0.1rem 0.9rem;
+    background: var(--amarelo);
+    border-radius: 10px;
+    font-family: var(--fonte-titulo);
+    font-weight: 500;
+}
+
+label {
+    display: block;
+    margin-bottom: var(--esp-1);
+    font-weight: 700;
+    font-size: var(--fs-pequeno);
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+select,
+textarea {
+    width: 100%;
+    margin-bottom: var(--esp-3);
+    padding: 0.6rem 0.8rem;
+    background: var(--branco);
+    color: var(--marrom);
+    border: 2px solid var(--marrom);
+    border-radius: 12px;
+    font: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--texto-suave);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px var(--turquesa);
+}
+
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+    border-color: var(--erro);
+    background: var(--erro-fundo);
+}
+
+/* Radios e checkbox ficam ao lado do texto */
+input[type="radio"],
+input[type="checkbox"] {
+    width: 1.15rem;
+    height: 1.15rem;
+    margin: 0 0.4rem 0 0;
+    accent-color: var(--laranja);
+    vertical-align: middle;
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+    display: inline-block;
+    margin: 0 1.25rem 0.9rem 0;
+    font-weight: 400;
+    font-size: var(--fs-base);
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    margin: 0 var(--esp-2) var(--esp-2) 0;
+    padding: 0.7rem 1.4rem;
+    color: var(--marrom);
+    border: 2px solid var(--marrom);
+    border-radius: 14px;
+    font-family: var(--fonte-titulo);
+    font-size: var(--fs-base);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+button[type="submit"] { background: var(--laranja); }
+button[type="reset"] { background: transparent; }
+button:hover { background: var(--amarelo); }
+button:active { transform: translateY(1px); }
+
+/* ===== Rodapé ===== */
+footer {
+    padding: 1.25rem var(--esp-4);
+    background: var(--marrom);
+    color: var(--creme);
+    font-size: var(--fs-pequeno);
+    text-align: center;
+}
+
+footer p {
+    margin: var(--esp-1) 0;
+}
+
+footer a {
+    color: var(--amarelo);
+}
+
+/* =====================================================
+   BREAKPOINTS (5 cenários)
+   1) 1200px+  desktop
+   2) 1600px+  desktop panorâmico
+   3) até 900px  tablet
+   4) até 700px  celular grande / tablet em pé
+   5) até 480px  celular pequeno
+   Nos breakpoints de fonte, só o valor da variável muda,
+   e todos os títulos e textos acompanham.
+   ===================================================== */
+
+/* 1) Desktop: mais espaço e logo maior */
+@media (min-width: 1200px) {
+    :root {
+        --largura-max: 1120px;
+    }
+
+    .logo {
+        height: 112px;
+    }
+
+    .topo-pagina .gato-lateral {
+        max-width: 230px;
+    }
+}
+
+/* 2) Panorâmico: página mais larga e escala de texto maior */
+@media (min-width: 1600px) {
+    :root {
+        --largura-max: 1320px;
+        --fs-pequeno: 1rem;
+        --fs-base: 1.15rem;
+        --fs-h3: 1.3rem;
+        --fs-h2: 1.8rem;
+        --fs-h1: 2.7rem;
+    }
+
+    .logo {
+        height: 128px;
+    }
+}
+
+/* 3) Tablet: cards da home em 2 colunas de 6 e menu mais compacto */
+@media (max-width: 900px) {
+    main {
+        padding: var(--esp-4);
+    }
+
+    .logo {
+        height: 84px;
+    }
+
+    nav a {
+        padding: 0.6rem 0.9rem;
+    }
+
+    #projetos article {
+        grid-column: span 6;
+    }
+
+    #projetos article:nth-of-type(3) {
+        grid-column: 1 / -1;
+    }
+
+    .cadastro-layout {
+        gap: var(--esp-4);
+    }
+}
+
+/* 4) Celular grande: tudo em uma coluna de 12 */
+@media (max-width: 700px) {
+    :root {
+        --fs-h1: 1.9rem;
+    }
+
+    .logo { height: 72px; }
+
+    header > p { flex-basis: 100%; order: 3; }
+
+    nav {
+        width: 100%;
+        order: 4;
+    }
+
+    /* Botão que abre e fecha o menu em telas pequenas */
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+        padding: 0.5rem 0.8rem;
+        background: var(--amarelo);
+        color: var(--marrom);
+        border: 2px solid var(--marrom);
+        border-radius: 12px;
+        font-size: 1.5rem;
+        line-height: 1;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .menu-toggle:hover {
+        background: var(--bege);
+    }
+
+    .menu-toggle:focus-visible {
+        outline: 3px solid var(--marrom);
+        outline-offset: 3px;
+    }
+
+    /* Menu fechado */
+    nav ul {
+        flex-direction: column;
+        gap: 0.4rem;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+            max-height 0.25s ease,
+            opacity 0.2s ease,
+            visibility 0.25s;
+    }
+
+    /* Menu aberto */
+    nav.menu-aberto ul {
+        max-height: 300px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav li {
+        flex: none;
+    }
+
+    nav a {
+        text-align: center;
+        padding: 0.6rem 0.4rem;
+        border-radius: 12px;
+    }
+
+    #projetos article {
+        grid-column: 1 / -1;
+    }
+
+    figure {
+        padding: var(--esp-4) 1.25rem var(--esp-3);
+    }
+
+    .topo-pagina > div {
+        grid-column: 1 / -1;
+        order: 2;
+    }
+
+    .topo-pagina .gato-lateral {
+        grid-column: 1 / -1;
+        order: 1;
+        justify-self: start;
+        width: 140px;
+    }
+
+    .cadastro-layout form {
+        grid-column: 1 / -1;
+    }
+
+    .cadastro-layout .gato-lateral {
+        grid-column: 1 / -1;
+        order: -1;
+        position: static;
+        width: 200px;
+        margin: 0 auto;
+    }
+}
+
+/* 5) Celular pequeno: textos menores, botões de largura total */
+@media (max-width: 480px) {
+    :root {
+        --fs-h1: 1.7rem;
+        --fs-h2: 1.4rem;
+        --fs-h3: 1.1rem;
+    }
+
+    main {
+        padding: var(--esp-4) var(--esp-3);
+    }
+
+    .logo { height: 60px; }
+
+    nav a {
+        font-size: var(--fs-pequeno);
+    }
+
+    fieldset {
+        padding: var(--esp-3) var(--esp-3) var(--esp-2);
+    }
+
+    button {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .topo-pagina .gato-lateral {
+        width: 110px;
+    }
+}
+
+/* Respeita quem prefere menos animação */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
+
