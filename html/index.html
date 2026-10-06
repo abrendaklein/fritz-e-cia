@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
- 
+
+    <a class="pular" href="#app">Pular para o conteúdo</a>
+
     <header>
         <a href="#/">
             <img class="logo" src="../imagens/logo-fritz-cia.png" alt="Fritz &amp; Cia - página inicial" width="800" height="710">
@@ -16,12 +18,12 @@
  
         <p>A nossa visita mais esperada.</p>
  
-        <nav>
-            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+        <nav aria-label="Menu principal">
+            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-lista">
                 ☰
             </button>
  
-            <ul>
+            <ul id="menu-lista">
                 <li><a href="#/">Início</a></li>
                 <li><a href="#/projetos">Projetos</a></li>
                 <li><a href="#/cadastro">Cadastro</a></li>
